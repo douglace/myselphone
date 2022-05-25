@@ -1,0 +1,13 @@
+{
+    "name": "viaziza/myselphone",
+    "autoload": {
+        "psr-4": {
+            "Viaziza\\Myselphone\\": "src/"
+        }
+    },
+    "authors": [{
+        "name": "vexi",
+        "email": "kvdouglace@gmail.com"
+    }],
+    "require": {}
+}

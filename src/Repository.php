@@ -143,7 +143,6 @@ class Repository
 
         $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'vz_storage` (
             `id_vz_storage` INT(11) NOT NULL AUTO_INCREMENT,
-            `position` INT(10) DEFAULT 0,
             `active` INT(1) DEFAULT 1,
             `deleted` INT(1) DEFAULT 0,
             `date_add` DATETIME DEFAULT CURRENT_TIMESTAMP,
@@ -160,7 +159,6 @@ class Repository
 
         $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'vz_color` (
             `id_vz_color` INT(11) NOT NULL AUTO_INCREMENT,
-            `position` INT(10) DEFAULT 0,
             `value` VARCHAR(200),
             `active` INT(1) DEFAULT 1,
             `deleted` INT(1) DEFAULT 0,
@@ -178,7 +176,7 @@ class Repository
 
         $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'vz_model` (
             `id_vz_model` INT(11) NOT NULL AUTO_INCREMENT,
-            `id_manufacture` INT(11) NOT NULL,
+            `id_manufacturer` INT(11) NOT NULL,
             `position` INT(10) DEFAULT 0,
             `weight` DECIMAL(20,6),
             `active` INT(1) DEFAULT 1,
@@ -191,12 +189,14 @@ class Repository
         $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'vz_model_storage` (
             `id_vz_model` INT(11) NOT NULL,
             `id_vz_storage` INT(11) NOT NULL,
+            `position` INT(10) DEFAULT 0,
             PRIMARY KEY  (`id_vz_model`, `id_vz_storage`)
         ) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
 
         $sql[] = 'CREATE TABLE IF NOT EXISTS `' . _DB_PREFIX_ . 'vz_model_color` (
             `id_vz_model` INT(11) NOT NULL,
             `id_vz_color` INT(11) NOT NULL,
+            `position` INT(10) DEFAULT 0,
             PRIMARY KEY  (`id_vz_model`, `id_vz_color`)
         ) ENGINE=' . _MYSQL_ENGINE_ . ' DEFAULT CHARSET=utf8;';
 

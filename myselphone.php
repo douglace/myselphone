@@ -81,13 +81,13 @@ class Myselphone extends Module
                 'parent'=>'AdminMyselPhoneParent',
             ),
             array(
-                'name'=> $this->l('Image'),
-                'class_name'=>'AdminMspImage',
+                'name'=> $this->l('Model'),
+                'class_name'=>'AdminMspModel',
                 'parent'=>'AdminMyselPhoneParent',
             ),
             array(
-                'name'=> $this->l('Model'),
-                'class_name'=>'AdminMspStorage',
+                'name'=> $this->l('Image'),
+                'class_name'=>'AdminMspImage',
                 'parent'=>'AdminMyselPhoneParent',
             )
         );
@@ -95,6 +95,7 @@ class Myselphone extends Module
         $this->repository = new Viaziza\Myselphone\Repository($this); 
         
         parent::__construct();
+        
         $this->languages = Language::getLanguages();
         
         $this->displayName = $this->l('Rachat de téléphone');
